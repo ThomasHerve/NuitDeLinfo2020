@@ -8,7 +8,8 @@ class SiteController extends Controller
 
 	public function index()
 	{
-		$this->render("index");
+		$array = ["test1","test2"];
+		$this->render("index",$array);
 	}
 
 	public function about()

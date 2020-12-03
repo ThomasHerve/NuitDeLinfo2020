@@ -1,4 +1,28 @@
 <!DOCTYPE html>
+    <style>
+        .header {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 100px;
+            background: aqua;
+            position: sticky;
+            position: -webkit-sticky;
+            top: 0;
+        }
+
+        .footer {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 50px;
+            background: darkblue;
+            position: sticky;
+            position: -webkit-sticky;
+            bottom: 0;
+        }
+
+    </style>
 	<html>
 		<head>
 			<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,3 +35,5 @@
 		</head>
 
 		<body>
+		<div class="header">
+		</div>

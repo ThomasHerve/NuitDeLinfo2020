@@ -1,0 +1,13 @@
+
+/* Classes */
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 50px;
+    background: darkblue;
+    position: sticky;
+    position: -webkit-sticky;
+    bottom: 0;
+}

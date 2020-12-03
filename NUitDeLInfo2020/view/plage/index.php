@@ -6,13 +6,13 @@
             <div class="text text-1">Trouvez</div>
             <div class="text text-2">votre plage de rêve</div>
             <div class="row inline all-width">
-            <button class="mybtn" type="submit"><i class="fa color-white fa-search"></i></button>
-            <input class="myinput" type="text" placeholder="Votre plage" aria-label="Search">
+                <button class="mybtn" type="submit"><i class="fa color-white fa-search"></i></button>
+                <input class="myinput" type="text" placeholder="Votre plage" aria-label="Search">
             </div>
         </div>
 
-        <div class="col-md-offset-3 col-lg-3">
-            <img src="https://cybersavoir.csdm.qc.ca/bibliotheques/files/2018/11/10_banques_dimages_gratuites_libres_de_droits-300x169.jpg" alt="">
+        <div class="img-container col-md-offset-3 col-lg-3">     
+            <img src="img/Search_graphic.svg" alt=""> 
         </div>
     </div>
 </div>

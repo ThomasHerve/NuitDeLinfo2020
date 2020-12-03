@@ -28,15 +28,6 @@
     border-radius: 0     10px      10px   0;
 }
 
-.column {
-    display: flex;
-    flex-direction: column;
-}
-
-.row {
-    display: flex;
-    flex-direction: row;
-}
 
 .text {
     color: white;
@@ -59,8 +50,21 @@
 
 .all-width {
     width: 100%;
+    display: flex;
+    flex-direction: row;
 }
 
 .half-width {
     width: 50%;
+}
+
+.img-container {
+    position: relative;
+    height: 100%;
+}
+
+.img-container img {
+    position: absolute;
+    top: -60px;
+    height: 150%;
 }

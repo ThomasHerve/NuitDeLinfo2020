@@ -1,0 +1,136 @@
+/* Classes */
+
+.search-content {
+    background: #2ECED1;
+    height: 200px;
+    margin-top: 100px;
+}
+
+.mybtn {
+    background-color:  #D1312E; /* Blue background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 12px 16px; /* Some padding */
+    cursor: pointer; /* Mouse pointer on hover */
+    border-radius: 10px     0      0   10px;
+    margin-right: 3px;
+}
+
+.myinput {
+    border: none; /* Remove borders */
+    width: 100%;
+    border-radius: 0     10px      10px   0;
+}
+
+
+.text {
+    color: white;
+    margin-left: 40px;
+}
+
+.text-1 {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.text-2 {
+    font-size: 25px;
+}
+
+.inline {
+    height: 25%;
+    margin-left: 40px;
+}
+
+.all-width {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.half-width {
+    width: 50%;
+}
+
+.card {
+    width: 200px;
+    box-shadow: 2px 2px 2px 2px grey;
+    background-color: #2ECED1;
+}
+
+.card:hover {
+    box-shadow: 4px 4px 4px 4px grey;
+    cursor: pointer;
+}
+
+.crop {
+    width: 200px;
+    height: 150px;
+    overflow: hidden;
+}
+
+.crop img {
+    width: 400px;
+    height: 300px;
+    margin: -75px 0 0 -100px;
+}
+
+.cards {
+    margin-top: 25px;
+    margin-left: 150px;
+    overflow: visible;
+    max-width: 1850px;
+    display: grid;
+    grid-row-gap: 5rem;
+}
+
+.my-center {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.white {
+    color: white;
+}
+
+@media (min-width: 600px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 900px) {
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .cards {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 1500px) {
+    .cards {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (min-width: 1800px) {
+    .cards {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+.img-container {
+    position: relative;
+    height: 100%;
+}
+
+.img-container img {
+    position: absolute;
+    top: -60px;
+    height: 150%;
+}

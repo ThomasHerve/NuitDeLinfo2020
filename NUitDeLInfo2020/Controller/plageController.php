@@ -1,6 +1,6 @@
 <?php
 
-class plageController extends Controller
+class PlageController extends Controller
 {
 	public function __construct()
 	{

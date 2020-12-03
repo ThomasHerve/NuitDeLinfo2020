@@ -1,3 +1,46 @@
+var leeted = false;
+var copie = [];
+
+document.addEventListener('keydown', function(event) {
+  if(event.keyCode == 37) {
+    InitLeet(classicLeet);
+  }
+  else if(event.keyCode == 38) {
+    InitLeet(simpleLeet);
+  }
+  else if(event.keyCode == 39) {
+    InitLeet(hardLeet);
+  }
+  else if(event.keyCode == 40) {
+    InitLeet(revert);
+  }
+});
+
+function InitLeet(leet){
+  var divs = document.querySelectorAll('[id=leetable]');
+
+  if(!leeted){
+    for(var i = 0; i < divs.length; i++){
+      copie.push(divs[i].innerHTML);
+      divs[i].innerHTML = leet(divs[i].innerHTML);
+    }
+    leeted = true;
+
+  }else{
+    for(var i = 0; i < copie.length; i++){
+      divs[i].innerHTML = leet(copie[i]);
+    }
+    if(leet == "revert"){
+      copie = [];
+      leeted = false;
+    }
+  }
+}
+
+function revert(text){
+  return text;
+}
+
 function classicLeet(text) {
     text = text.toUpperCase();
     text = text.replaceAll("A", "4")

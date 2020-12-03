@@ -4,6 +4,7 @@ class Users {
     private $pseudo;
     private $mdp;
 
+
     function __construct($i,$p,$m) {
             $this->id=$i;
             $this->pseudo=$p;

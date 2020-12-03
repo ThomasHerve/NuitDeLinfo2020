@@ -1,5 +1,5 @@
 <?php
-class Com {
+class Comm {
     private $id_commentaire;
     private $com;
     private $id_user;

@@ -12,6 +12,10 @@
 		</head>
 
 		<body>
-		<div class="header">
-		</div>
-		<div class="content">
+			<div class="header">
+				<a href="/">
+					<img class="logo" src="img/Logo.svg" alt="">
+				</a>
+			</div>
+		
+			<div class="content">

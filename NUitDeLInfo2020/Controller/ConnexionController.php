@@ -37,11 +37,12 @@ class ConnexionController extends Controller
                 $ident = htmlentities($_POST['identifiant'], ENT_QUOTES, "ISO-8859-1"); 
                 $mdp   = htmlentities($_POST['mdp'], ENT_QUOTES, "ISO-8859-1");
                 
-                header("Location : http://localhost/NuitDeLinfo2020/NUitDeLInfo2020/");
+                header("Location: ?r=site");
 
                 // ======= CODE CI-DESSOUS A TESTER UNE FOIS LA CLASSE DTLUsers TERMINÉ ========
 
                 //on se connecte à la base de données:
+                /*
                 $dtlusers = new DTLUsers();
                 $result =  $dtlusers->getByPseudo($ident, $mdp);
 
@@ -57,6 +58,7 @@ class ConnexionController extends Controller
                     // retour a l'acceuil
 
                 }
+                */
             }
         }
         

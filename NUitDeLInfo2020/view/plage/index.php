@@ -13,14 +13,21 @@
     <div class="text-1">element</div>
 </div>
 
-
+<div class="cards">
 <?php
 foreach ($d as $key => $value){
 ?>
-    <p><?php echo $value["note"]; ?></p>
-    <p><?php echo $value["nom"]; ?></p>
-    <img class="" src="<?php echo $value["photo"];?>" alt="GACHIMUCHI">
+    <div class="card">
+        <div class="crop">
+            <img class="" src="<?php echo $value["photo"];?>" alt="GACHIMUCHI">
+        </div>
+        <div class="white text-2 my-center"><?php echo $value["nom"]; ?></div>
+        <div class="my-center">
+            <div class="Stars" style="--star-size: 35px;--rating: <?php echo $value["note"]; ?>;">★★★★★</div>
+        </div>
+    </div>
 <?php
 }
 ?>
+</div>
 </div>

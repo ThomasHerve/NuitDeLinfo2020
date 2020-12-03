@@ -1,3 +1,12 @@
+/**
+ * Pour utiliser : inclure le script sur une page avec 
+ *  <script type="text/javascript" src="js/LeetConvert.js">
+ * et ajouter le tag "leetable" aux div concernés
+ * 
+ */
+
+
+
 var leeted = false;
 var copie = [];
 

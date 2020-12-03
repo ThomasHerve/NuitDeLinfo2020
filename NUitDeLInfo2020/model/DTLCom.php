@@ -2,7 +2,7 @@
 include_once "Com.php";
 class DTLCom {
 
-    function getall(){
+    function getAll(){
         $list_com=array();
         $stm = db()->query("SELECT * FROM com");
 
@@ -15,7 +15,7 @@ class DTLCom {
 
     }
 
-    function getbyid($id){
+    function getById($id){
         $stm = db()->query("SELECT * FROM com where id_commentaire=".$id);
         $rows = $stm->fetchAll(PDO::FETCH_NUM);
         foreach($rows as $row) {
@@ -24,7 +24,7 @@ class DTLCom {
         return $com;
     }
 
-    function getbyPlageId($id){
+    function getByPlageId($id){
             $list_com=array();
             $stm = db()->query("SELECT * FROM com where id_plage_com=".$id);
             $rows = $stm->fetchAll(PDO::FETCH_NUM);
@@ -34,7 +34,7 @@ class DTLCom {
             return $list_com;
         }
 
-    function getbyUserId($id){
+    function getByUserId($id){
             $list_com=array();
             $stm = db()->query("SELECT * FROM com where id_user_com=".$id);
             $rows = $stm->fetchAll(PDO::FETCH_NUM);

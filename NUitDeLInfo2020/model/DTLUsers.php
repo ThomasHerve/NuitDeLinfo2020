@@ -3,7 +3,7 @@ include_once "Users.php";
 class DTLUsers {
     //TODO rajouter des majuscules
 
-    function getall(){
+    function getAll(){
         $list_users=array();
         $stm = db()->query("SELECT * FROM users");
 
@@ -17,7 +17,7 @@ class DTLUsers {
 
     }
 
-    function getbyid($id){
+    function getById($id){
         $stm = db()->query("SELECT * FROM users where id_user=".$id);
         $rows = $stm->fetchAll(PDO::FETCH_NUM);
         $user=NULL;
@@ -29,7 +29,7 @@ class DTLUsers {
         else return NULL;
     }
 
-    function getbyPseudo($p){
+    function getByPseudo($p){
             $stm = db()->query("SELECT * FROM users where pseudo='".$p."'");
             $rows = $stm->fetchAll(PDO::FETCH_NUM);
             $user=NULL;
@@ -43,7 +43,7 @@ class DTLUsers {
 
         //return l'id nouvellement créer
     function setUsers($pseudo,$mdp){
-        $p=$this->getbyPseudo($pseudo);
+        $p=$this->getByPseudo($pseudo);
         if($p!=NULL)
         {
             return NULL;

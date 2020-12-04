@@ -9,7 +9,7 @@ include_once "Controller/route.php";
 
 
 print "<p><p>test DTLUSER</p>";
-include "model/DTLUsers.php";
+include_once "model/DTLUsers.php";
 $d=new DTLUsers();
 $p=$d->getAll();
 print $p[0]->pseudo."\n";

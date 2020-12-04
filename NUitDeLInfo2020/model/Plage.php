@@ -19,6 +19,9 @@ class Plage {
 
     function __get($property) {
          switch ($property) {
+         case "id":
+                          return $this->id;
+                          break;
              case "nom_plage":
                  return $this->nom_plage;
                  break;

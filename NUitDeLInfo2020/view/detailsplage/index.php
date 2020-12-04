@@ -27,10 +27,12 @@
 <div class="comment_block">
  <!-- used by #{user} to create a new comment -->
  <div class="create_new_comment">
-
+<?php
+echo "<form action='?r=Detailsplage&p=".$d['id']."' method='post'>";
+?>
     <!-- current user -->
     <div class="input_comment">
-        <input type="text" placeholder="Nouveau commentaire..">
+        <input name="test" type="text" placeholder="Nouveau commentaire..">
     </div>
     <div class="stars-post">
           <div class="note">
@@ -84,24 +86,29 @@
                 <label for="star1-3" title="text">1 star</label>
               </div>
          </div>
-        <button  class="bouton margin-top-30">
-            Poster
-        </button>
     </div>
+    <input class="bouton margin-top-30" type="submit" name="commente" value="Poster"><br>
+    </form>
  </div>
  <!-- new comment -->
- <div class="new_comment">
-    <!-- build comment -->
-    <ul class="user_comment">
-        <div class="name">
-            Boris
-        </div>
-        <!-- the comment body --><div class="comment_body">
-            <p>Gastropub cardigan jean shorts, kogi Godard PBR&B lo-fi locavore. Organic chillwave vinyl Neutra. Bushwick Helvetica cred freegan, crucifix Godard craft beer deep v mixtape cornhole Truffaut master cleanse pour-over Odd Future beard. Portland polaroid iPhone.</p>
-             <div class="text-note-comment">Qualité de l'eau :<div class="Stars" style="--star-size: 25px;--rating:5;">★★★★★</div></div>
-             <div class="text-note-comment">Pollution  de l'eau :<div class="Stars" style="--star-size: 25px;--rating:4;">★★★★★</div></div>
-             <div class="text-note-comment">Etat de la plage :<div class="Stars" style="--star-size: 25px;--rating:3;">★★★★★</div></div>
-        </div>
-    </ul>
-</div>
+ <?php
+ $i=0;
+ foreach($d["coms"] as $com){
+    echo "<div class='new_comment'>
+              <!-- build comment -->
+              <ul class='user_comment'>
+                  <div class='name'>
+                      ".$d['pseudo'][$i]."
+                  </div>
+                  <!-- the comment body --><div class='comment_body'>
+                      <p>$com->com</p>
+                       <div class='text-note-comment'>Qualité de l'eau :<div class='Stars' style='--star-size: 25px;--rating:$com->note_com_eau_chimique;'>★★★★★</div></div>
+                       <div class='text-note-comment'>Pollution  de l'eau :<div class='Stars' style='--star-size: 25px;--rating:$com->note_com_eau_dechet;'>★★★★★</div></div>
+                       <div class='text-note-comment'>Etat de la plage :<div class='Stars' style='--star-size: 25px;--rating:$com->note_com_dechet;'>★★★★★</div></div>
+                  </div>
+              </ul>
+          </div>";
+         $i++;
+ }
+ ?>
 

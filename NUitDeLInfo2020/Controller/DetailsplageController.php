@@ -1,5 +1,4 @@
 <?php
-
 class DetailsplageController extends Controller
 {
 	public function __construct()
@@ -8,16 +7,43 @@ class DetailsplageController extends Controller
 
 	public function index()
 	{
-		//note nom photo
-		$array = [
-			"nom" => "ching chong",
-			"photo" =>"https://viago.ca/wp-content/uploads/2015/07/Plage-768x432.jpg",
-			"description" => "abdoul le maboul est très en colère ! aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaa aaaaa aaaaaa aaaaa aa",
-			"qualiteEau" => 4,
-			"pollutionEau" => 3,
-			"etatPlage" => 5
-			];
-		$this->render("index",$array);
+	if(isset($_POST['commente'])) {
+
+        //TODO recup le num user
+        $c=new DTLCom();
+        $c->setCom($_POST['test'],2,parameters()["p"],$_POST['rate'],$_POST['rate2'],$_POST['rate3']);
+        unset($_POST['commente']);
+        $this->index();
+    } else {
+
+            $d=new DTLPlage();
+            $p=$d->getById(parameters()["p"]);
+            $c=new DTLCom();
+
+            $coms=$c->getByPlageId(parameters()["p"]);
+
+            $u=new DTLUsers();
+            $pseudo=array();
+             foreach($coms as $com){
+                $plop=$u->getById($com->id_user);
+                array_push($pseudo,$plop->pseudo);
+             }
+
+            $array = [
+                "id"=>parameters()["p"],
+                "nom" => $p->nom_plage,
+                "photo" =>$p->photo_plage,
+                "description" => $p->desciption_plage,
+                "qualiteEau" => $p->note_eau_chimique,
+                "pollutionEau" => $p->note_eau_dechet,
+                "etatPlage" => $p->note_dechet,
+                "coms"=>$coms,
+                "pseudo"=>$pseudo
+                ];
+
+
+            $this->render("index",$array);
+		}
 	}
 
 }

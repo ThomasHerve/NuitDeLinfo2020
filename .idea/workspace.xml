@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="445c936c-56da-4e3f-8381-7dfbafcac4c6" name="Default Changelist" comment="ajout DTLPlage, + test+addpat to dev dtatabase">
+    <list default="true" id="445c936c-56da-4e3f-8381-7dfbafcac4c6" name="Default Changelist" comment="Ouspi">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NUitDeLInfo2020/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/NUitDeLInfo2020/db.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NUitDeLInfo2020/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/NUitDeLInfo2020/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NUitDeLInfo2020/model/DTLCom.php" beforeDir="false" afterPath="$PROJECT_DIR$/NUitDeLInfo2020/model/DTLCom.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NUitDeLInfo2020/model/DTLUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/NUitDeLInfo2020/model/DTLUsers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NUitDeLInfo2020/Controller/DetailsplageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/NUitDeLInfo2020/Controller/DetailsplageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NUitDeLInfo2020/model/Plage.php" beforeDir="false" afterPath="$PROJECT_DIR$/NUitDeLInfo2020/model/Plage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NUitDeLInfo2020/view/detailsplage/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/NUitDeLInfo2020/view/detailsplage/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

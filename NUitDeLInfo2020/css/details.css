@@ -19,6 +19,7 @@
 .container-main {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
 }
 
 .image-desc {
@@ -31,3 +32,18 @@
     font-size: 25px;
     word-wrap: break-word;
 }
+
+.notes {
+    display: flex;
+    flex-direction: column;
+}
+
+.moy-note {
+    font-weight: bold;
+    font-size: 45px;
+}
+.text-note {
+    font-weight: bold;
+    font-size: 30px;
+}
+

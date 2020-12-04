@@ -30,12 +30,9 @@
     min-height: calc(100vh - 70px);
 }
 
-:root {
+.Stars {
     --star-color: #fff;
     --star-background: #fc0;
-}
-
-.Stars {
     --percent: calc(var(--rating) / 5 * 100%);
 
     display: inline-block;
@@ -44,7 +41,7 @@
     line-height: 1;
 
      letter-spacing: 3px;
-     background: linear-gradient(90deg, var(--star-background) var(--percent), var(--star-color) var(--percent));
+     background: linear-gradient(90deg, var(--star-background) var(--percent), grey var(--percent));
      -webkit-background-clip: text;
      -webkit-text-fill-color: transparent;
  }

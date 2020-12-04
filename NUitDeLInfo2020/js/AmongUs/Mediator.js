@@ -39,6 +39,7 @@ function autoKill(){
         r = Math.floor(Math.random() * 10);
     }
     localStorage.setItem(getColor(r), getDEAD());
+    console.log("Kill de "+getColor(r));
     checkEnd()
 }
 

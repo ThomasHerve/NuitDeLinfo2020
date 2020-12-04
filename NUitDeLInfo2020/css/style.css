@@ -21,6 +21,19 @@
     margin : 0px 0px 0px 0px;
 }
 
+.container-title {
+    display: flex;
+    justify-content: center;
+}
+
+.entry-text {
+    font-size: 22px;
+}
+
+.big-title {
+    height: 400px;
+}
+
 .connect-text {
     font-size: 25px;
 }

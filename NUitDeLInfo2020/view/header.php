@@ -13,7 +13,7 @@
 
 		<body>
 			<div class="header">
-				<a href="/">
+				<a href="/?r=plage">
 					<img class="logo" src="img/Logo.svg" alt="">
 				</a>
 				<div>
@@ -30,7 +30,7 @@
                             ";
                     }
                     else {
-                        echo "<div class = 'connected'><a class='connect-text ' href='/?r=connexion'><div>Connection</div></a></div>";
+                        echo "<div class = 'connected'><a class='connect-text ' href='/?r=connexion'><div>Connexion</div></a></div>";
                     }
                 ?>
 			</div>

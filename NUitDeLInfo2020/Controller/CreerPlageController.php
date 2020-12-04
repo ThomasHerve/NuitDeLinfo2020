@@ -43,26 +43,18 @@ class CreerPlageController extends Controller
                     $photo  = htmlentities($_POST['photoplage'], ENT_QUOTES, "ISO-8859-1");
                     $descri = htmlentities($_POST['descriplage'], ENT_QUOTES, "ISO-8859-1");
                     
-                    header("Location: ?r=site");
-
-                    // ======= CODE CI-DESSOUS A TESTER UNE FOIS LA CLASSE DTLUsers TERMINÉ ========
-                    /*
-                    $dtlusers = new DTLUsers();
-                    $result =  $dtlusers->setmescouilles($nom, $photo, $descri);
+                    $dtlplage = new DTLPlage();
+                    $result =  $dtlplage->setPlage($nom, $photo, $descri);
 
                     // Verification retour requete user
                     if( $result == NULL ) {
-                        $array = ["erreur" => "La plage éxiste deja"];
+                        $array = ["infos" => "La plage éxiste deja"];
                         $this->render("index", $array);
 
                     } else {
-                        // on ouvre la session avec $_SESSION:
-                        $_SESSION['id'] = result[0]->id(); // la session peut être appelée différemment et son contenu aussi peut être autre chose que le pseudo
-                        
-                        // retour a l'acceuil
-
+                        $array = ["infos" => "La plage a été créé"];
+                        $this->render("index", $array);
                     }
-                    */
                 }
             }
         }

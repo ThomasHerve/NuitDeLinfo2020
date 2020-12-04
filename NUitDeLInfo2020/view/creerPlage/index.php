@@ -25,4 +25,8 @@
 				'''
 		}
 	}
+
+	if(isset($d["infos"])){
+		echo '<p id="infos">'.$d["infos"].'</p>';
+	}
 ?>

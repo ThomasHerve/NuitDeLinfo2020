@@ -35,6 +35,7 @@ echo "<form action='?r=Detailsplage&p=".$d['id']."' method='post'>";
 ?>
     <!-- current user -->
     <?php
+	if( isset($_SESSION['id'])){
      if($_SESSION['id']) {
      ?>
     <div class="input_comment">
@@ -97,6 +98,7 @@ echo "<form action='?r=Detailsplage&p=".$d['id']."' method='post'>";
     </form>
     <?php
     }
+	}
     ?>
  </div>
  <!-- new comment -->

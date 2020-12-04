@@ -20,6 +20,7 @@
 					<img class="title" src="img/title.png" alt="">
 				</div>
                 <?php
+				if( isset($_SESSION['id'])){
                     if($_SESSION['id']) {
                         echo "<div class = 'connected'><div class='connect-text'>Connecté en temps que ".include_once "model/DTLUsers.php";
                             $u=new DTLUSERS();print $u->getById($_SESSION['id'])->pseudo."</div>";
@@ -32,6 +33,7 @@
                     else {
                         echo "<div class = 'connected'><a class='connect-text ' href='/NuitDeLinfo2020/NUitDeLInfo2020//?r=connexion'><div>Connexion</div></a></div>";
                     }
+				}
                 ?>
 			</div>
 		

@@ -1,5 +1,4 @@
 <?php 
-include "DTLUsers";
 
 $data = NULL;
 
@@ -22,8 +21,8 @@ class CreerPlageController extends Controller
     public function form()
     {   
 
-        if(empty($_POST['nompplage'])) {
-            $array = ["erreur" => "Le nome de la plage est vide"];;
+        if(empty($_POST['nomplage'])) {
+            $array = ["erreur" => "Le nom de la plage est vide"];;
             $this->render("index", $array);
 
         } else {

@@ -1,9 +1,6 @@
 var timer;
 
 document.addEventListener('keydown', function(event) {
-    if(event.key == "F4"){
-        ShowLose();
-    }
     if(event.key == "k" || event.key == "K") {
         userKill(getPersonnageColor());
     }
@@ -17,7 +14,7 @@ document.addEventListener('keydown', function(event) {
         }
         else if(window.confirm("Emergency Call :\n Répondre à l'appel ?")){
             if(window.confirm("Voulez vous un rappel de la mission ?"))
-                window.alert(" 2 imposteurs sont parmi nous !\n Vous devez interroger tout le monde, et ejecter les suspects (touche K).\n Bonne chance !")
+                window.alert(" 2 imposteurs sont parmi nous !\n Vous devez interroger tout le monde (survol de la souris), et ejecter les suspects (touche K), avant que les imposteurs n'ai tués tout le monde\n Bonne chance !")
             InitGame();
             showPersonnage();
         }
@@ -159,13 +156,12 @@ function ShowLose(){
 
     var img1 = document.createElement("img");
     img1.src = 'img/AmongUs/Base-01.png';
-    auicon.style = "filter:hue-rotate("+getColorAngle(imp1)+"deg); width:20%; height:20%";
-    modalImg.appendChild(img1);
-
+    img1.style = "filter:hue-rotate("+getColorAngle(imp1)+"deg); width:20%; height:20%";
 
     var img2 = document.createElement("img");
-    img1.src = 'img/AmongUs/Base-01.png';
-    auicon.style = "filter:hue-rotate("+getColorAngle(imp2)+"deg); width:20%; height:20%";
-    modalImg.appendChild(img2);
+    img2.src = 'img/AmongUs/Base-01.png';
+    img2.style = "filter:hue-rotate("+getColorAngle(imp2)+"deg); width:20%; height:20%";
+
+
 
 }

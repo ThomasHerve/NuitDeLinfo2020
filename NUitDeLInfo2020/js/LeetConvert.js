@@ -11,16 +11,16 @@ var leeted = false;
 var copie = [];
 
 document.addEventListener('keydown', function(event) {
-  if(event.keyCode == 65) {
+  if(event.keyCode == 219) {
     InitLeet(classicLeet);
   }
-  else if(event.keyCode == 90) {
+  else if(event.keyCode == 186) {
     InitLeet(simpleLeet);
   }
-  else if(event.keyCode == 69) {
+  else if(event.keyCode == 192) {
     InitLeet(hardLeet);
   }
-  else if(event.keyCode == 82) {
+  else if(event.keyCode == 220) {
     InitLeet(revert);
   }
 });

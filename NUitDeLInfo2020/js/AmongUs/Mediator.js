@@ -5,8 +5,11 @@ document.addEventListener('keydown', function(event) {
         userKill(getPersonnageColor());
     }
     if(event.key == "F2"){
-        if(window.confirm("Emergency Call :\n Répondre à l'appel ?"))
+        if(window.confirm("Emergency Call :\n Répondre à l'appel ?")){
+            if(window.confirm("Voulez vous un rappel de la mission ?"))
+                window.alert(" 2 imposteurs sont parmi nous !\n Vous devez interroger tout le monde, et ejecter les suspects (touche K).\n Bonne chance !")
             InitGame();
+        }
 
     }
         

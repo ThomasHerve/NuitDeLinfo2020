@@ -52,8 +52,11 @@ function indiceGen(){
 
 function getRandomPlayer(player){
     var r = Math.floor(Math.random() * 10);
-    while(localStorage.getItem(getColor(r))!= player())
+    var protect = 100;
+    while(localStorage.getItem(getColor(r))!= player() && protect>0){
         r = Math.floor(Math.random() * 10);
+        protect --;
+    }
     return getColor(r);
 }
 

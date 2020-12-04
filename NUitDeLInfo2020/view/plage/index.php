@@ -29,7 +29,7 @@ foreach ($d as $key){
         <div class="crop">
             <img class="image-plage" src="<?php echo $key->photo_plage; ?>" alt="GACHIMUCHI">
         </div>
-        <div class="white text-2 my-center"><?php echo $key->nom_plage; ?></div>
+        <div id='leetable' class="white text-2 my-center"><?php echo $key->nom_plage; ?></div>
         <div class="my-center">
             <div class="Stars" style="--star-size: 35px;--rating: <?php echo ($key->note_eau_chimique + $key->note_eau_dechet + $key->note_dechet)/3; ?>;">★★★★★</div>
         </div>

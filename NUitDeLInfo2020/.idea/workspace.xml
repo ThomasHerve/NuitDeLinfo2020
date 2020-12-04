@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="1a0fb6b5-03be-4fab-bd6f-bd6947963e3b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/LeetConvert.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/LeetConvert.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/detailsplage/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/detailsplage/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/plage/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/plage/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/site/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/site/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

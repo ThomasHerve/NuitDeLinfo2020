@@ -10,7 +10,5 @@
     <p>Pour acceder au reste du site, cliquez sur le logo en haut à gauche.</p>
 </div>
 
-<script type="text/javascript" src="js/LeetConvert.js">
-</script>
 </div>
 

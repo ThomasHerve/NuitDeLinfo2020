@@ -2,21 +2,21 @@
 <link rel="stylesheet" href="css/comment.css">
 
 <div>
-    <p class="title"><?php echo $d["nom"]; ?></p>
+    <p class="title" id="leetable"><?php echo $d["nom"]; ?></p>
     <div class="container-main">
         <div class="image-desc">
             <div class="crop">
                 <img class="" src="<?php echo $d["photo"];?>" alt="GACHIMUCHI">
             </div>
-            <p class="description"><?php echo $d["description"]; ?></p>
+            <p id="leetable class="description"><?php echo $d["description"]; ?></p>
         </div>
         <div class="notes">
              <div class="moy-note">Note globale :
                 <div class="Stars" style="--star-size: 75px;--rating:  <?php echo (($d["qualiteEau"] + $d["pollutionEau"] + $d["etatPlage"])/3); ?>;">★★★★★</div>
              </div>
-             <div class="text-note">Qualité de l'eau :<div class="Stars" style="--star-size: 35px;--rating:  <?php echo $d["qualiteEau"]; ?>;">★★★★★</div></div>
-             <div class="text-note">Pollution  de l'eau :<div class="Stars" style="--star-size: 35px;--rating: <?php echo $d["pollutionEau"]; ?>;">★★★★★</div></div>
-             <div class="text-note">Etat de la plage :<div class="Stars" style="--star-size: 35px;--rating: <?php echo $d["etatPlage"]; ?>;">★★★★★</div></div>
+             <div id="leetable" class="text-note">Qualité de l'eau :<div class="Stars" style="--star-size: 35px;--rating:  <?php echo $d["qualiteEau"]; ?>;">★★★★★</div></div>
+             <div id="leetable" class="text-note">Pollution  de l'eau :<div class="Stars" style="--star-size: 35px;--rating: <?php echo $d["pollutionEau"]; ?>;">★★★★★</div></div>
+             <div id="leetable" class="text-note">Etat de la plage :<div class="Stars" style="--star-size: 35px;--rating: <?php echo $d["etatPlage"]; ?>;">★★★★★</div></div>
         </div>
     </div>
 </div>
@@ -39,7 +39,7 @@ echo "<form action='?r=Detailsplage&p=".$d['id']."' method='post'>";
     </div>
     <div class="stars-post">
           <div class="note">
-              <div class="text-note-comment margin-top-10">
+              <div id='leetable' class="text-note-comment margin-top-10">
                     Qualité de l'eau :
               </div>
               <div class="rate">
@@ -56,7 +56,7 @@ echo "<form action='?r=Detailsplage&p=".$d['id']."' method='post'>";
               </div>
           </div>
           <div class="note">
-            <div class="text-note-comment margin-top-10">
+            <div id='leetable' class="text-note-comment margin-top-10">
                   Pollution de l'eau :
             </div>
             <div class="rate2">
@@ -73,7 +73,7 @@ echo "<form action='?r=Detailsplage&p=".$d['id']."' method='post'>";
             </div>
         </div>
         <div class="note">
-              <div class="text-note-comment margin-top-10">
+              <div id='leetable' class="text-note-comment margin-top-10">
                     Etat de la plage :
               </div>
               <div class="rate3">
@@ -107,10 +107,10 @@ echo "<form action='?r=Detailsplage&p=".$d['id']."' method='post'>";
                       ".$d['pseudo'][$i]."
                   </div>
                   <!-- the comment body --><div class='comment_body'>
-                      <p>$com->com</p>
-                       <div class='text-note-comment'>Qualité de l'eau :<div class='Stars' style='--star-size: 25px;--rating:$com->note_com_eau_chimique;'>★★★★★</div></div>
-                       <div class='text-note-comment'>Pollution  de l'eau :<div class='Stars' style='--star-size: 25px;--rating:$com->note_com_eau_dechet;'>★★★★★</div></div>
-                       <div class='text-note-comment'>Etat de la plage :<div class='Stars' style='--star-size: 25px;--rating:$com->note_com_dechet;'>★★★★★</div></div>
+                      <p id='leetable'>$com->com</p>
+                       <div id='leetable' class='text-note-comment'>Qualité de l'eau :<div class='Stars' style='--star-size: 25px;--rating:$com->note_com_eau_chimique;'>★★★★★</div></div>
+                       <div id='leetable' class='text-note-comment'>Pollution  de l'eau :<div class='Stars' style='--star-size: 25px;--rating:$com->note_com_eau_dechet;'>★★★★★</div></div>
+                       <div id='leetable' class='text-note-comment'>Etat de la plage :<div class='Stars' style='--star-size: 25px;--rating:$com->note_com_dechet;'>★★★★★</div></div>
                   </div>
               </ul>
           </div>";

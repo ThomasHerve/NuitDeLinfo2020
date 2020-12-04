@@ -19,8 +19,11 @@ function indiceGen(){
     if(localStorage.getItem(color) == getDEAD())
         return "J'ai si mal ...";
 
+    var quote = localStorage.getItem(color+"quote");
+    if(quote != null)
+        return quote;
+
     var r = Math.floor(Math.random() * 12);
-    var quote;
     switch(r){
         case 0 :  quote = getQuote(-2);
         case 1,2 : quote = getQuote(+2);break;
@@ -39,6 +42,7 @@ function indiceGen(){
     quote = quote.replace("@", name1);
     quote = quote.replace("@", name2);
 
+    localStorage.setItem(color+"quote",quote);
     return quote;
 }
 

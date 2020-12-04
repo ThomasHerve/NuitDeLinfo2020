@@ -40,6 +40,10 @@ function autoKill(){
     }
     localStorage.setItem(getColor(r), getDEAD());
     console.log("Kill de "+getColor(r));
+
+    for (let i = 0; i < getColorNumber(); i++) {
+        localStorage.removeItem(getColor(i)+"quote");
+    }
     checkEnd()
 }
 

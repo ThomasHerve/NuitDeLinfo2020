@@ -1,14 +1,14 @@
 const colors = [
-    "red",
-    "orange",
-    "yellow",
-    "lime",
-    "green",
-    "cyan",
-    "blue",
-    "violet",
-    "magenta",
-    "pink"
+    "Red",
+    "Orange",
+    "Yellow",
+    "Lime",
+    "Green",
+    "Cyan",
+    "Blue",
+    "Violet",
+    "Magenta",
+    "Pink"
 ]
 const colorangle = [
     "0",

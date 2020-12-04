@@ -16,6 +16,23 @@
 				<a href="/">
 					<img class="logo" src="img/Logo.svg" alt="">
 				</a>
+				<div>
+					<img class="title" src="img/title.png" alt="">
+				</div>
+                <?php
+                    if($_SESSION['id']) {
+                        echo "<div class = 'connected'><div class='connect-text'>Connecté en temps que ".include_once "model/DTLUsers.php";
+                            $u=new DTLUSERS();print $u->getById($_SESSION['id'])->pseudo."</div>";
+                            echo "<form action='' method='post'>
+                                <input type='submit' name='deconnexion' value='deconnection'><br>
+                             </form>
+                            </div>
+                            ";
+                    }
+                    else {
+                        echo "<div class = 'connected'><a class='connect-text ' href='/?r=connexion'><div>Connection</div></a></div>";
+                    }
+                ?>
 			</div>
 		
 			<div class="content">

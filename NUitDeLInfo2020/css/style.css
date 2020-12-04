@@ -8,12 +8,23 @@
     position: -webkit-sticky;
     top: 0;
     z-index: 99;
+    justify-content: space-between;
 }
 
 .logo {
     height: 90px;
     margin : 10px 0px 0px 10px;
 }
+
+.title {
+    height: 110px;
+    margin : 0px 0px 0px 0px;
+}
+
+.connect-text {
+    font-size: 25px;
+}
+
 
 .footer {
     display: flex;
@@ -29,6 +40,14 @@
 .content {
     min-height: calc(100vh - 70px);
 }
+
+.connected {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
 
 .Stars {
     --star-color: #fff;

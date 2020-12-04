@@ -30,7 +30,7 @@ foreach ($d as $key){
         </div>
         <div class="white text-2 my-center"><?php echo $key->nom_plage; ?></div>
         <div class="my-center">
-            <div class="Stars" style="--star-size: 35px;--rating: <?php echo $key->desciption_plage; ?>;">★★★★★</div>
+            <div class="Stars" style="--star-size: 35px;--rating: <?php echo ($key->note_eau_chimique + $key->note_eau_dechet + $key->note_dechet)/3; ?>;">★★★★★</div>
         </div>
     </div>
     </a>

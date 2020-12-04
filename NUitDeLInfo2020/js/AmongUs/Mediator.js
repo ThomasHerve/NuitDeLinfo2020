@@ -17,10 +17,18 @@ const KILLDELAY = 10000;
 
 var timer;
 
+document.addEventListener('keydown', function(event) {
+    if(event.keyCode == keyCode.K) {
+        userKill(Personnage.color);
+    }
+  });
 
 
+if(localStorage.getItem("timer")== null)
+    InitGame();
+else
+    timer = setTimeout(autoKill, KILLDELAY - (Date.now() - localStorage.getItem("timer")));
 
-InitGame()
 
 function InitGame(){
     var r1 = Math.floor(Math.random() * 10);
@@ -31,8 +39,7 @@ function InitGame(){
     for (let i = 0; i < colors.length; i++) {
         localStorage.setItem(colors[i], i!=r1 && i!=r2 ? CREWMATE:IMPOSTER );
     }
-
-    timer = setTimeout(autoKill, KILLDELAY)
+    launchTimer();
 }
 
 function autoKill(){
@@ -46,8 +53,9 @@ function autoKill(){
 }
 
 function userKill(color){
+    clearTimeout(timer);
     localStorage.setItem(colors[color], DEAD);
-    checkEnd()
+    checkEnd();
 }
 
 function checkEnd(){
@@ -66,11 +74,26 @@ function checkEnd(){
 
     if(lose >= 0){
         window.alert("Perdu !");
+        localStorage.removeItem("timer");
     }else if(win){
         window.alert("Gagne !");
+        localStorage.removeItem("timer");
     }
     else{
-        timer = setTimeout(autoKill, KILLDELAY)
+        launchTimer();
     }
 
+
+    
+}
+
+function launchTimer(){
+    timer = setTimeout(autoKill, KILLDELAY);
+    localStorage.setItem("timer", Date.now());
+}
+
+
+
+function getColors(){
+    return colors;
 }

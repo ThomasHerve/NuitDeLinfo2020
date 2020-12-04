@@ -7,16 +7,16 @@ foreach ($d as $value){
 ?>
 <div>
 Je suis un texte non leetable
-
-<script type="text/javascript" src="js/AmongUs/Mediator.js"></script>
 </div>
 <div id="leetable">
 Je suis un texte leetable
 </div>
 
-<script type="text/javascript" src="js/LeetConvert.js">
+<script type="text/javascript" src="js/LeetConvert.js"></script>
+<script type="text/javascript" src="js/AmongUs/Mediator.js"></script>
+<script type="text/javascript" src="js/AmongUs/Personnage.js"></script>
 
-</script>
+
 
 </div>
 

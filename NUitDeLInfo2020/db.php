@@ -1,6 +1,6 @@
 <?php
 
-$db = new PDO("pgsql:host=localhost;port=5432;dbname=nuit2020test","postgres","pokemon88");
+$db = new PDO("pgsql:host=51.210.127.195;port=5432;dbname=nuit2020dev","postgres","sql");
 //$db->exec("set search_path to framwhop");
 
 

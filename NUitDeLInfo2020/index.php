@@ -59,5 +59,9 @@ print $c1->nom_plage."\n";
 
 print $a->setPlage("plage3","photo","dsec");
 
+foreach ($c as $value) {
+	print $value->nom_plage."\n";
+}
+
 print "</p>";
 */

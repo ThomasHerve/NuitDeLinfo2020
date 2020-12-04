@@ -23,6 +23,9 @@
 <div>
     <h1>Commentaires</h1>
 
+<div id="among-us">
+</div>
+
 <!-- comments container -->
 <div class="comment_block">
  <!-- used by #{user} to create a new comment -->

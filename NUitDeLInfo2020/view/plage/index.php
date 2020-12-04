@@ -5,9 +5,10 @@
         <div class="col-lg-6">
             <div class="text text-1">Trouvez</div>
             <div class="text text-2">votre plage de rêve</div>
+            
             <div class="row inline all-width">
                 <button class="mybtn" type="submit"><i class="fa color-white fa-search"></i></button>
-                <input class="myinput" type="text" placeholder="Votre plage" aria-label="Search">
+                <input value="aaa" class="myinput" type="text" placeholder="Votre plage" aria-label="Search">
             </div>
         </div>
 
@@ -20,7 +21,7 @@
 <div class="cards">
 <?php
 
-foreach ($d["plages"] as $key => $value){
+foreach ($d as $key => $value){
 ?>
     <div class="card">
         <div class="crop">
@@ -37,17 +38,5 @@ foreach ($d["plages"] as $key => $value){
 ?>
 
 </div>
-
-    <nav>
-        <ul class="pagination">
-
-            <?php for($page = 1; $page <= $d["pages"]; $page++): ?>
-                <li class="page-item <?= ($_GET["page"] == $page) ? "active" : "" ?>">
-                    <a href="./?r=plage&page=<?= $page ?>" class="page-link"><?= $page ?></a>
-                </li>
-            <?php endfor ?>
-
-        </ul>
-    </nav>
 
 </div>

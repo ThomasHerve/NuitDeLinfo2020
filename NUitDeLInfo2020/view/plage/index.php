@@ -8,7 +8,7 @@
             
             <div class="row inline all-width">
                 <button class="mybtn" type="submit"><i class="fa color-white fa-search"></i></button>
-                <input value="aaa" class="myinput" type="text" placeholder="Votre plage" aria-label="Search">
+                <input class="myinput" type="text" placeholder="Votre plage" aria-label="Search">
             </div>
         </div>
 
@@ -18,14 +18,14 @@
     </div>
 </div>
 
-<div class="cards">
+<div id="myPlages" class="cards">
 <?php
 
 foreach ($d as $key => $value){
 ?>
     <div class="card">
         <div class="crop">
-            <img class="" src="<?php /*echo $value["photo"]; */?>https://viago.ca/wp-content/uploads/2015/07/Plage-768x432.jpg" alt="GACHIMUCHI">
+            <img class="" src="<?php echo $value["photo_plage"]; ?>" alt="GACHIMUCHI">
         </div>
         <div class="white text-2 my-center"><?php echo $value["nom_plage"]; ?></div>
         <div class="my-center">
@@ -36,6 +36,8 @@ foreach ($d as $key => $value){
 <?php
 }
 ?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/filtre.js"></script>
 
 </div>
 

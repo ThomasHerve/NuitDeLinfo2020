@@ -1,44 +1,33 @@
-const colors = [
-    "red",
-    "blue",
-    "pink",
-    "green",
-    "black",
-    "white",
-    "orange",
-    "yellow",
-    "violet",
-    "cyan"
-]
-const CREWMATE = "crewmate";
-const IMPOSTER = "imposter";
-const DEAD = "dead";
-const KILLDELAY = 10000;
-
 var timer;
 
 document.addEventListener('keydown', function(event) {
     if(event.key == "k" || event.key == "K") {
         userKill(getPersonnageColor());
     }
+    if(event.key == "F2"){
+        if(window.confirm("Emergency Call :\n Répondre à l'appel ?"))
+            InitGame();
+
+    }
+        
   });
 
 
-if(localStorage.getItem("timer")== null)
-    InitGame();
-else
-    timer = setTimeout(autoKill, KILLDELAY - (Date.now() - localStorage.getItem("timer")));
+
+
+
+if(localStorage.getItem("timer")!= null)
+    timer = setTimeout(autoKill, getKillDelay() - (Date.now() - localStorage.getItem("timer")));
 
 
 function InitGame(){
-    console.log("Instanciation de la partie");
     var r1 = Math.floor(Math.random() * 10);
     var r2 = Math.floor(Math.random() * 10);
     while(r2 == r1)
     r2 = Math.floor(Math.random() * 10);
 
-    for (let i = 0; i < colors.length; i++) {
-        localStorage.setItem(colors[i], i!=r1 && i!=r2 ? CREWMATE:IMPOSTER );
+    for (let i = 0; i < getColorNumber(); i++) {
+        localStorage.setItem(getColor(i), i!=r1 && i!=r2 ? getCREWMATE():getIMPOSTER() );
     }
     launchTimer();
 }
@@ -46,16 +35,16 @@ function InitGame(){
 function autoKill(){
     var r = Math.floor(Math.random() * 10);
 
-    while(localStorage.getItem(colors[r]) == IMPOSTER || localStorage.getItem(colors[r]) == DEAD){
+    while(localStorage.getItem(getColor(r)) == getIMPOSTER() || localStorage.getItem(getColor(r)) == getDEAD()){
         r = Math.floor(Math.random() * 10);
     }
-    localStorage.setItem(colors[r], DEAD);
+    localStorage.setItem(getColor(r), getDEAD());
     checkEnd()
 }
 
 function userKill(color){
     clearTimeout(timer);
-    localStorage.setItem(color, DEAD);
+    localStorage.setItem(color, getDEAD());
     checkEnd();
 }
 
@@ -63,12 +52,12 @@ function checkEnd(){
     var win = true;
     var lose = 0;
 
-    for (let i = 0; i < colors.length; i++) {
-        var c = localStorage.getItem(colors[i]);
-        if(c == IMPOSTER){
+    for (let i = 0; i < getColorNumber(); i++) {
+        var c = localStorage.getItem(getColor(i));
+        if(c == getIMPOSTER()){
             win = false;
             lose ++;
-        }else if(c == CREWMATE){
+        }else if(c == getCREWMATE()){
             lose --;
         }
     }
@@ -89,21 +78,16 @@ function checkEnd(){
 }
 
 function launchTimer(){
-    timer = setTimeout(autoKill, KILLDELAY);
+    clearTimeout(timer);
+    timer = setTimeout(autoKill, getKillDelay());
     localStorage.setItem("timer", Date.now());
 }
 
 function printGameState(){
-    for (let i = 0; i < colors.length; i++) {
-        console.log(colors[i] + " : " + localStorage.getItem(colors[i]));
+    for (let i = 0; i < getColorNumber(); i++) {
+        console.log(getColor(i) + " : " + localStorage.getItem(getColor(i)));
     }
 
 }
 
-function getColors(){
-    return colors;
-}
-function getDead(){
-    return DEAD;
-}
 

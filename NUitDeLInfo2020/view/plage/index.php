@@ -23,6 +23,7 @@
 
 foreach ($d as $key){
 ?>
+    <div class="a">
     <a href="/NuitDeLinfo2020/NUitDeLInfo2020/?r=detailsplage&p=<?php echo $key->id;?>">
     <div class="card">
         <div class="crop">
@@ -34,6 +35,7 @@ foreach ($d as $key){
         </div>
     </div>
     </a>
+    </div>
 <?php
 }
 ?>

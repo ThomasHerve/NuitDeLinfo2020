@@ -7,7 +7,7 @@ include_once "tools.php";
 session_start();
 include_once "Controller/route.php";
 
-
+/*
 print "<p><p>test DTLUSER</p>";
 include "model/DTLUsers.php";
 $d=new DTLUsers();
@@ -17,7 +17,7 @@ print $p[0]->pseudo."\n";
 $p2=$d->getById(2);
 print $p2->pseudo."\n";
 
-$p3=$d->getByPseudo("snoopy");
+$p3=$d->getByPseudo("snoopy", "mettresonmdp");
 print $p3->pseudo."\n";
 
 print $d->setUsers("test1","test2");
@@ -60,3 +60,4 @@ print $c1->nom_plage."\n";
 print $a->setPlage("plage3","photo","dsec");
 
 print "</p>";
+*/

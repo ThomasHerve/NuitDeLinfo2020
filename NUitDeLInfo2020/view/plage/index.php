@@ -26,7 +26,7 @@ foreach ($d as $key){
     <a href="/NuitDeLinfo2020/NUitDeLInfo2020/?r=detailsplage&p=<?php echo $key->id;?>">
     <div class="card">
         <div class="crop">
-            <img class="" src="<?php echo $key->photo_plage; ?>" alt="GACHIMUCHI">
+            <img class="image-plage" src="<?php echo $key->photo_plage; ?>" alt="GACHIMUCHI">
         </div>
         <div class="white text-2 my-center"><?php echo $key->nom_plage; ?></div>
         <div class="my-center">

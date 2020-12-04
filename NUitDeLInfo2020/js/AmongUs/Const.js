@@ -28,7 +28,7 @@ const colorangle = [
 const CREWMATE = "crewmate";
 const IMPOSTER = "imposter";
 const DEAD = "dead";
-const KILLDELAY = 10000;
+const KILLDELAY = 20000;
 
 
 const neutralQuote = [

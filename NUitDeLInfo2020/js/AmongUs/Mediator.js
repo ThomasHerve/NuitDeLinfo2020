@@ -5,10 +5,18 @@ document.addEventListener('keydown', function(event) {
         userKill(getPersonnageColor());
     }
     if(event.key == "F2"){
-        if(window.confirm("Emergency Call :\n Répondre à l'appel ?")){
+        if(localStorage.getItem("timer")!= null){
+            if(window.confirm("Voulez vous abandonner votre equipage ?")){
+                clearTimeout(timer);
+                localStorage.removeItem("timer");
+                document.getElementById("personnage").remove();
+            }
+        }
+        else if(window.confirm("Emergency Call :\n Répondre à l'appel ?")){
             if(window.confirm("Voulez vous un rappel de la mission ?"))
                 window.alert(" 2 imposteurs sont parmi nous !\n Vous devez interroger tout le monde, et ejecter les suspects (touche K).\n Bonne chance !")
             InitGame();
+            showPersonnage();
         }
 
     }
@@ -19,9 +27,10 @@ document.addEventListener('keydown', function(event) {
 
 
 
-if(localStorage.getItem("timer")!= null)
+if(localStorage.getItem("timer")!= null){
     timer = setTimeout(autoKill, getKillDelay() - (Date.now() - localStorage.getItem("timer")));
-
+    showPersonnage();
+}
 
 function InitGame(){
     var r1 = Math.floor(Math.random() * 10);

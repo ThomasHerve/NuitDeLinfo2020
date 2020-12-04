@@ -18,8 +18,8 @@ const KILLDELAY = 10000;
 var timer;
 
 document.addEventListener('keydown', function(event) {
-    if(event.keyCode == keyCode.K) {
-        userKill(Personnage.color);
+    if(event.key == "k" || event.key == "K") {
+        userKill(getPersonnageColor());
     }
   });
 
@@ -31,6 +31,7 @@ else
 
 
 function InitGame(){
+    console.log("Instanciation de la partie");
     var r1 = Math.floor(Math.random() * 10);
     var r2 = Math.floor(Math.random() * 10);
     while(r2 == r1)
@@ -54,7 +55,7 @@ function autoKill(){
 
 function userKill(color){
     clearTimeout(timer);
-    localStorage.setItem(colors[color], DEAD);
+    localStorage.setItem(color, DEAD);
     checkEnd();
 }
 
@@ -92,8 +93,17 @@ function launchTimer(){
     localStorage.setItem("timer", Date.now());
 }
 
+function printGameState(){
+    for (let i = 0; i < colors.length; i++) {
+        console.log(colors[i] + " : " + localStorage.getItem(colors[i]));
+    }
 
+}
 
 function getColors(){
     return colors;
 }
+function getDead(){
+    return DEAD;
+}
+

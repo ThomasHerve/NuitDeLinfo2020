@@ -21,16 +21,16 @@
 <div id="myPlages" class="cards">
 <?php
 
-foreach ($d as $key => $value){
+foreach ($d as $key){
 ?>
-    <a href='/?r=detailsplage&p='.<?php echo $value["id"]?>.'>
+    <a href="/NuitDeLinfo2020/NUitDeLInfo2020/?r=detailsplage&p=<?php echo $key->id;?>">
     <div class="card">
         <div class="crop">
-            <img class="" src="<?php echo $value["photo_plage"]; ?>" alt="GACHIMUCHI">
+            <img class="" src="<?php echo $key->photo_plage; ?>" alt="GACHIMUCHI">
         </div>
-        <div class="white text-2 my-center"><?php echo $value["nom_plage"]; ?></div>
+        <div class="white text-2 my-center"><?php echo $key->nom_plage; ?></div>
         <div class="my-center">
-            <div class="Stars" style="--star-size: 35px;--rating: <?php echo $value["note"]; ?>;">★★★★★</div>
+            <div class="Stars" style="--star-size: 35px;--rating: <?php echo $key->desciption_plage; ?>;">★★★★★</div>
         </div>
     </div>
     </a>

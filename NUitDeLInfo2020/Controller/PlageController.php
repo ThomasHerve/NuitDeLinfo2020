@@ -15,16 +15,11 @@ class PlageController extends Controller
 			$currentPage = 1;
 		}
 
-		
-		$db = db();
+        $p=new DTLPlage();
+        $ps=$p->getAll();
 
-		//$sql = "SELECT nom_plage,photo_plage FROM plage";
-		$sql = "SELECT nom_plage,photo_plage FROM plage";
-		$resultset = $db->prepare($sql);
-		$resultset->execute();
 
-		$res = $resultset->fetchAll(PDO::FETCH_ASSOC);
-		return $res;
+		return $ps;
 
 	}
 

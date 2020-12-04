@@ -31,6 +31,9 @@
 echo "<form action='?r=Detailsplage&p=".$d['id']."' method='post'>";
 ?>
     <!-- current user -->
+    <?php
+     if($_SESSION['id']) {
+     ?>
     <div class="input_comment">
         <input name="test" type="text" placeholder="Nouveau commentaire..">
     </div>
@@ -89,6 +92,9 @@ echo "<form action='?r=Detailsplage&p=".$d['id']."' method='post'>";
     </div>
     <input class="bouton margin-top-30" type="submit" name="commente" value="Poster"><br>
     </form>
+    <?php
+    }
+    ?>
  </div>
  <!-- new comment -->
  <?php

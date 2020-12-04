@@ -4,8 +4,8 @@
 		echo '<p id="erreur">'.$d["erreur"].'</p>';
 	}
 
-	//if( isset($_SESSION['id'])){
-		//if( !empty($_SESSION['id'])){
+	if( isset($_SESSION['id'])){
+		if( !empty($_SESSION['id'])){
 
 			echo '
 				<form action="?r=creerPlage" method="post">
@@ -22,8 +22,8 @@
 					<input type="submit" name="creerplage" value="Creer un plage"><br>
 
 				</form> ';
-		//}
-	//}
+		}
+	}
 
 	if(isset($d["infos"])){
 		echo '<p id="infos">'.$d["infos"].'</p>';

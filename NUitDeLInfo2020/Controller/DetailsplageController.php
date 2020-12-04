@@ -7,11 +7,10 @@ class DetailsplageController extends Controller
 
 	public function index()
 	{
-	if(isset($_POST['commente'])) {
+	if(isset($_POST['commente']) && isset( $_SESSION['id'])) {
 
-        //TODO recup le num user
         $c=new DTLCom();
-        $c->setCom($_POST['test'],2,parameters()["p"],$_POST['rate'],$_POST['rate2'],$_POST['rate3']);
+        $c->setCom($_POST['test'], $_SESSION['id'],parameters()["p"],$_POST['rate'],$_POST['rate2'],$_POST['rate3']);
         unset($_POST['commente']);
         $this->index();
     } else {

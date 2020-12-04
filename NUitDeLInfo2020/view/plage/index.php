@@ -25,7 +25,7 @@ foreach ($d as $key => $value){
 ?>
     <div class="card">
         <div class="crop">
-            <img class="" src="<?php echo $value["photo_plage"]; ?>" alt="GACHIMUCHI">
+            <img class="img-plage" src="<?php echo $value["photo_plage"]; ?>" alt="GACHIMUCHI">
         </div>
         <div class="white text-2 my-center"><?php echo $value["nom_plage"]; ?></div>
         <div class="my-center">

@@ -11,7 +11,7 @@
     <p>Pour acceder au reste du site, cliquez sur le logo en haut à gauche.</p>
 
     <h2>L33T</h2>
-    <p>Si vous appuyez sur les touches A/Z/E/R, il se pourrait que le site ne devienne plus comprehensible que part l'élite...</p>
+    <p>Si vous appuyez sur les touches ^/$/ù/*, il se pourrait que le site ne devienne plus comprehensible que part l'élite...</p>
     <h3>Among us</h3>
     <p>Appuyez sur F2 pour enclencher le mini jeu among us ! appuyez sur F5 pour rafraichir la page et obtenir un nouveau personnage. Passez votre souris par dessus pour voir ce qu'il a à dire</p>
     <p>Appuyez sur K pour tuer le personnage, à vos risques et perils... Attention, les imposteurs ne resteront pas inactif et tueront regulierement des crewmates !</p>

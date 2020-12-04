@@ -1,7 +1,8 @@
 <?php
 
-$db = new PDO("pgsql:host=localhost;port=5433;dbname=nargeotl","nargeotl","WeFy06");
-$db->exec("set search_path to framwhop");
+$db = new PDO("pgsql:host=51.210.127.195;port=5432;dbname=nuit2020dev","postgres","sql");
+//$db->exec("set search_path to framwhop");
+
 
 function db()
 {

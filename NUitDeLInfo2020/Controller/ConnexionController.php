@@ -1,5 +1,4 @@
 <?php 
-include "DTLUsers";
 
 $data = NULL;
 
@@ -92,8 +91,8 @@ class ConnexionController extends Controller
                     
                     $_SESSION['id'] = $result[0]; // la session peut être appelée différemment et son contenu aussi peut être autre chose que le pseudo
                     
-                    $array = ["infoscreer" => "Utilisateur créé"];
-                    $this->render("index", $array);
+                    // retour a l'acceuil
+                    header("Location: ?r=site");
                 }
             }
         }

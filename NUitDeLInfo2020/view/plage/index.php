@@ -5,6 +5,7 @@
         <div class="col-lg-6">
             <div class="text text-1">Trouvez</div>
             <div class="text text-2">votre plage de rêve</div>
+            
             <div class="row inline all-width">
                 <button class="mybtn" type="submit"><i class="fa color-white fa-search"></i></button>
                 <input class="myinput" type="text" placeholder="Votre plage" aria-label="Search">
@@ -17,21 +18,27 @@
     </div>
 </div>
 
-<div class="cards">
+<div id="myPlages" class="cards">
 <?php
+
 foreach ($d as $key => $value){
 ?>
     <div class="card">
         <div class="crop">
-            <img class="" src="<?php echo $value["photo"];?>" alt="GACHIMUCHI">
+            <img class="" src="<?php echo $value["photo_plage"]; ?>" alt="GACHIMUCHI">
         </div>
-        <div class="white text-2 my-center"><?php echo $value["nom"]; ?></div>
+        <div class="white text-2 my-center"><?php echo $value["nom_plage"]; ?></div>
         <div class="my-center">
             <div class="Stars" style="--star-size: 35px;--rating: <?php echo $value["note"]; ?>;">★★★★★</div>
         </div>
     </div>
+    
 <?php
 }
 ?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/filtre.js"></script>
+
 </div>
+
 </div>

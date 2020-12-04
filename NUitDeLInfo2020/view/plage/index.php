@@ -19,40 +19,35 @@
 
 <div class="cards">
 <?php
-foreach ($d as $key => $value){
+
+foreach ($d["plages"] as $key => $value){
 ?>
     <div class="card">
         <div class="crop">
-            <img class="" src="<?php echo $value["photo"];?>" alt="GACHIMUCHI">
+            <img class="" src="<?php /*echo $value["photo"]; */?>https://viago.ca/wp-content/uploads/2015/07/Plage-768x432.jpg" alt="GACHIMUCHI">
         </div>
-        <div class="white text-2 my-center"><?php echo $value["nom"]; ?></div>
+        <div class="white text-2 my-center"><?php echo $value["nom_plage"]; ?></div>
         <div class="my-center">
             <div class="Stars" style="--star-size: 35px;--rating: <?php echo $value["note"]; ?>;">★★★★★</div>
         </div>
     </div>
-
-    <nav>
-        <ul class="pagination">
-            <!-- Lien vers la page précédente (désactivé si on se trouve sur la 1ère page) -->
-            <li class="page-item <?= ($currentPage == 1) ? "disabled" : "" ?>">
-                <a href="./?page=<?= $currentPage - 1 ?>" class="page-link">Précédente</a>
-            </li>
-            <?php for($page = 1; $page <= $nbPlages; $page++): ?>
-                <!-- Lien vers chacune des nbPlages (activé si on se trouve sur la page correspondante) -->
-                <li class="page-item <?= ($currentPage == $page) ? "active" : "" ?>">
-                    <a href="./?page=<?= $page ?>" class="page-link"><?= $page ?></a>
-                </li>
-            <?php endfor ?>
-                <!-- Lien vers la page suivante (désactivé si on se trouve sur la dernière page) -->
-                <li class="page-item <?= ($currentPage == $nbPlages) ? "disabled" : "" ?>">
-                <a href="./?page=<?= $currentPage + 1 ?>" class="page-link">Suivante</a>
-            </li>
-        </ul>
-    </nav>
-
     
 <?php
 }
 ?>
+
 </div>
+
+    <nav>
+        <ul class="pagination">
+
+            <?php for($page = 1; $page <= $d["pages"]; $page++): ?>
+                <li class="page-item <?= ($_GET["page"] == $page) ? "active" : "" ?>">
+                    <a href="./?r=plage&page=<?= $page ?>" class="page-link"><?= $page ?></a>
+                </li>
+            <?php endfor ?>
+
+        </ul>
+    </nav>
+
 </div>

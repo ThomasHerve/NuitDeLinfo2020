@@ -15,6 +15,17 @@ class PlageController extends Controller
 			$currentPage = 1;
 		}
 
+		
+		$db = db();
+
+		//$sql = "SELECT nom_plage,photo_plage FROM plage";
+		$sql = "SELECT nom_plage,photo_plage FROM plage";
+		$resultset = $db->prepare($sql);
+		$resultset->execute();
+
+		$res = $resultset->fetchAll(PDO::FETCH_ASSOC);
+
+		/*
 		$array = [
 			["note" => 5,"nom" => "1","photo" =>"https://viago.ca/wp-content/uploads/2015/07/Plage-768x432.jpg"],
 			["note" => 4.5,"nom" => "2","photo" =>"https://viago.ca/wp-content/uploads/2015/07/Plage-768x432.jpg"],
@@ -35,36 +46,36 @@ class PlageController extends Controller
 			["note" => 4.5,"nom" => "17","photo" =>"https://viago.ca/wp-content/uploads/2015/07/Plage-768x432.jpg"],
 			["note" => 2.3,"nom" => "18","photo" =>"https://viago.ca/wp-content/uploads/2015/07/Plage-768x432.jpg"]
 		];
+		*/
 
 		//requete sql recupérer le nombre de plage 
-		$nbPlages = sizeof($array);
-
+		$nbPlages = sizeof($res);
+		
 		//nb plages par pages
 		$parPage = 3;
 
 		//nombre de page
 		$pages = ceil($nbPlages/$parPage);
-
+		
 		//determine le premier élément
 		$premier = ($currentPage * $parPage) - $parPage;
 
-		$array = array_slice($array, $premier, 3);
+		$res = array_slice($res, $premier, 3);
 
-		return $array;
+		$res =  array(
+			"plages" => $res,
+			"pages" => $pages
+		);
+
+		var_dump($res);
+
+		return $res;
 
 	}
 
 	public function index()
 	{
 		$array = $this->getPlage();
-		//note nom photo
-		/*
-		$array = [
-			["note" => 5,"nom" => "ching chong","photo" =>"https://viago.ca/wp-content/uploads/2015/07/Plage-768x432.jpg"],
-			["note" => 4.5,"nom" => "ching chong","photo" =>"https://viago.ca/wp-content/uploads/2015/07/Plage-768x432.jpg"],
-			["note" => 2.3,"nom" => "ching chong","photo" =>"https://viago.ca/wp-content/uploads/2015/07/Plage-768x432.jpg"]
-		];
-		*/
 		$this->render("index",$array);
 	}
 

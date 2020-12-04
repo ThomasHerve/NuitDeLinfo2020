@@ -12,6 +12,12 @@ Je suis un texte non leetable
 Je suis un texte leetable
 </div>
 
+<div>
+	<?php
+	echo $_SESSION['id'];
+	?>
+</div>
+
 <script type="text/javascript" src="js/LeetConvert.js">
 
 </script>

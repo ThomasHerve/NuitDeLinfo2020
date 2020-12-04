@@ -29,8 +29,8 @@ class DTLUsers {
         else return NULL;
     }
 
-    function getByPseudo($p){
-            $stm = db()->query("SELECT * FROM users where pseudo='".$p."'");
+    function getByPseudo($p, $mdp){
+            $stm = db()->query("SELECT * FROM users where pseudo='".$p."' and mdp='".$mdp."'");
             $rows = $stm->fetchAll(PDO::FETCH_NUM);
             $user=NULL;
             foreach($rows as $row) {
@@ -43,7 +43,7 @@ class DTLUsers {
 
         //return l'id nouvellement créer
     function setUsers($pseudo,$mdp){
-        $p=$this->getByPseudo($pseudo);
+        $p=$this->getByPseudo($pseudo,$mdp);
         if($p!=NULL)
         {
             return NULL;

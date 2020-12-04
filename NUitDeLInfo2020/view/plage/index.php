@@ -23,6 +23,7 @@
 
 foreach ($d as $key => $value){
 ?>
+    <a href='/?r=detailsplage&p='.<?php echo $value["id"]?>.'>
     <div class="card">
         <div class="crop">
             <img class="" src="<?php echo $value["photo_plage"]; ?>" alt="GACHIMUCHI">
@@ -32,7 +33,7 @@ foreach ($d as $key => $value){
             <div class="Stars" style="--star-size: 35px;--rating: <?php echo $value["note"]; ?>;">★★★★★</div>
         </div>
     </div>
-    
+    </a>
 <?php
 }
 ?>

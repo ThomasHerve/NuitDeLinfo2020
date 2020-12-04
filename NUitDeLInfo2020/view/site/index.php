@@ -5,7 +5,7 @@ foreach ($d as $value){
     echo("<p>".$value."</p>");
 }
 ?>
-<div>
+<div >
 Je suis un texte non leetable
 </div>
 <div id="leetable">

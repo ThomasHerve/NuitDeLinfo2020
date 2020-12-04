@@ -1,6 +1,9 @@
 var timer;
 
 document.addEventListener('keydown', function(event) {
+    if(event.key == "F4"){
+        ShowLose();
+    }
     if(event.key == "k" || event.key == "K") {
         userKill(getPersonnageColor());
     }
@@ -40,6 +43,7 @@ function InitGame(){
 
     for (let i = 0; i < getColorNumber(); i++) {
         localStorage.setItem(getColor(i), i!=r1 && i!=r2 ? getCREWMATE():getIMPOSTER() );
+        localStorage.setItem(getColor(i)+"s",localStorage.getItem(getColor(i)));
     }
     launchTimer();
 }
@@ -60,8 +64,11 @@ function autoKill(){
 }
 
 function userKill(color){
+    if(localStorage.getItem(color) == getDEAD())
+        return;
     clearTimeout(timer);
     localStorage.setItem(color, getDEAD());
+    document.getElementById("personnage").remove();
     checkEnd();
 }
 
@@ -80,10 +87,10 @@ function checkEnd(){
     }
 
     if(lose >= 0){
-        window.alert("Perdu !");
+        ShowLose()
         localStorage.removeItem("timer");
     }else if(win){
-        window.alert("Gagne !");
+        ShowWin()
         localStorage.removeItem("timer");
     }
     else{
@@ -107,4 +114,58 @@ function printGameState(){
 
 }
 
+function ShowWin(){
+    var modal = document.createElement("div");
+    modal.className = 'modal';
+    document.getElementById('body').appendChild(modal); 
 
+    var modalImg = document.createElement("img");
+    modalImg.className = 'modal-content';
+    modalImg.src = 'img/AmongUs/Victory.png';
+    modalImg.style.width = '100%';
+    modalImg.style.height = '100%';
+    modal.appendChild(modalImg);
+    modal.style.display = "block";
+    modal.onclick = function() {
+        modal.style.display = "none";
+    }
+
+}
+function ShowLose(){
+    var modal = document.createElement("div");
+    modal.className = 'modal';
+    document.getElementById('body').appendChild(modal); 
+
+    var modalImg = document.createElement("img");
+    modalImg.className = 'modal-content';
+    modalImg.src = 'img/AmongUs/Defeat.png';
+    modalImg.style.width = '100%';
+    modalImg.style.height = '100%';
+    modal.appendChild(modalImg);
+    modal.style.display = "block";
+    modal.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    var imp1 = null, imp2  = null;
+    for (let i = 0; i < getColorNumber(); i++) {
+        if(localStorage.getItem(getColor(i)+"s") == getIMPOSTER()){
+            if(imp1 == null)
+                imp1 = i;
+            else
+                imp2 = i;
+        }
+    }
+
+    var img1 = document.createElement("img");
+    img1.src = 'img/AmongUs/Base-01.png';
+    auicon.style = "filter:hue-rotate("+getColorAngle(imp1)+"deg); width:20%; height:20%";
+    modalImg.appendChild(img1);
+
+
+    var img2 = document.createElement("img");
+    img1.src = 'img/AmongUs/Base-01.png';
+    auicon.style = "filter:hue-rotate("+getColorAngle(imp2)+"deg); width:20%; height:20%";
+    modalImg.appendChild(img2);
+
+}

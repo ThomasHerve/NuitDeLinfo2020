@@ -5,7 +5,10 @@ function showPersonnage(){
     
     var auicon = document.createElement("img");
     auicon.id = 'personnage';
-    auicon.src = 'img/AmongUs/'+ (Math.random() < 0.5 ? 'Base' : 'Run') +'-0'+ Math.floor(Math.random()*6 +1) +'.png';
+    if(isalive)
+        auicon.src = 'img/AmongUs/'+ (Math.random() < 0.5 ? 'Base' : 'Run') +'-0'+ Math.floor(Math.random()*6 +1) +'.png';
+    else
+        auicon.src = 'img/AmongUs/Dead-01.png'
     auicon.style = "filter:hue-rotate("+getColorAngle(getColorIndex(color))+"deg); width:20%; height:20%";
     auicon.title = indice;
     document.getElementById('among-us').appendChild(auicon);

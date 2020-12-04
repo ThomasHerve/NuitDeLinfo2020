@@ -30,10 +30,10 @@
                             </div>
                             ";
                     }
+				}
                     else {
                         echo "<div class = 'connected'><a class='connect-text ' href='/NuitDeLinfo2020/NUitDeLInfo2020//?r=connexion'><div>Connexion</div></a></div>";
                     }
-				}
                 ?>
 			</div>
 		
